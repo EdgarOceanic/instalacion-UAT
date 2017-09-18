@@ -1,0 +1,526 @@
+﻿dn: dc=amis,dc=com,dc=mx
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: AMIS
+dc: amis
+
+dn: cn=admin,dc=amis,dc=com,dc=mx
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP administrator
+userPassword: {SSHA}Zz7OxAKI5Mx6QvpF14mMyvFJpN4BKCpm
+
+dn: ou=groups,dc=amis,dc=com,dc=mx
+ou: groups
+objectClass: organizationalUnit
+objectClass: top
+
+dn: cn=ADMSAP,ou=groups,dc=amis,dc=com,dc=mx
+uniqueMember: uid=eperezm,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=punod,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=aamisq,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=afernandezv,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember:: dWlkPWRiYXJyw7NuYyxvdT1wZW9wbGUsZGM9YW1pcyxkYz1jb20sZGM9bXg=
+uniqueMember: uid=ssssf,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=cvelazquezn,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=pqa0,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=pvica,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=mlunas,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=jliejac,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=gcruza,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=pwah,ou=people,dc=amis,dc=com,dc=mx
+ou: admin-sap
+description: Administrador AMIS AyE
+cn: ADMSAP
+objectClass: groupOfUniqueNames
+
+dn: cn=ADMTI,ou=groups,dc=amis,dc=com,dc=mx
+uniqueMember: uid=vgarciam,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=ppruebap,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=vgarciag,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=ecastillom,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=atiq,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=ssssf,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=mmendezg,ou=people,dc=amis,dc=com,dc=mx
+ou: admin-ti
+description: Administrador AMIS TI
+cn: ADMTI
+objectClass: groupOfUniqueNames
+
+dn: cn=ADMASC,ou=groups,dc=amis,dc=com,dc=mx
+uniqueMember: uid=vgarciam,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=aadmasociaq,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=afernandezv,ou=people,dc=amis,dc=com,dc=mx
+ou: admin-asc
+description: Administrador Asociada
+cn: ADMASC
+objectClass: groupOfUniqueNames
+
+dn: cn=USRASC,ou=groups,dc=amis,dc=com,dc=mx
+uniqueMember: uid=eperezm,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=vgarciam,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=pparamop,ou=people,dc=amis,dc=com,dc=mx
+uniqueMember: uid=uasociadaq,ou=people,dc=amis,dc=com,dc=mx
+ou: user-asc
+description: Usuario Asociada
+cn: USRASC
+objectClass: groupOfUniqueNames
+
+dn: ou=people,dc=amis,dc=com,dc=mx
+ou: people
+objectClass: organizationalUnit
+objectClass: top
+
+dn: uid=vgarciam,ou=people,dc=amis,dc=com,dc=mx
+employeeType: Tester
+mail: victor@prutech.com.mx
+ou: AMIS
+postalAddress: Cuahutemoc
+description: Lic. en Calidad
+cn: Victor Manuel
+title: Encargado
+uid: vgarciam
+postalCode: 02020
+street: Insurgentes Sur
+givenName: Mendez
+telephoneNumber: 52 1234567
+businessCategory: false
+sn: Garcia1
+objectClass: inetOrgPerson
+userPassword: Victor12345&
+
+dn: uid=eperezm,ou=people,dc=amis,dc=com,dc=mx
+employeeType: Manager
+mail: edna@prutech.com.mx
+telephoneNumber: 52 87654321
+ou: AMIS
+postalAddress: Cuahutemoc
+description:: TGljLiBlbiBBZG1pbmlzdHJhY2nDs24=
+cn: Edna Margarita
+title: Encargado
+uid: eperezm
+postalCode: 02020
+street: Insurgentes Sur
+givenName: Montesinos
+sn: Perez
+objectClass: inetOrgPerson
+businessCategory: true
+userPassword: ^3661edna123
+
+dn: uid=ppruebap,ou=people,dc=amis,dc=com,dc=mx
+employeeType: prueba
+mail: prueba@prueba.com
+telephoneNumber: 5555555555
+ou: S0001
+postalAddress: prueba
+description: prueba
+cn: prueba
+title: prueba
+uid: ppruebap
+street: prueba
+postalCode: 13200
+givenName: prueba
+sn: prueba
+businessCategory: true
+objectClass: inetOrgPerson
+
+dn:: dWlkPXZnYXJjw61hbSxvdT1wZW9wbGUsZGM9YW1pcyxkYz1jb20sZGM9bXg=
+uid:: dmdhcmPDrWFt
+givenName: Mendoza
+cn:: VmFsZW50w61uIEFsYmVydG8=
+sn:: R2FyY8OtYQ==
+objectClass: inetOrgPerson
+
+dn: cn=CONASC,ou=groups,dc=amis,dc=com,dc=mx
+uniqueMember: uid=nobody,ou=people,ou=groups
+uniqueMember: uid=casociaf,ou=people,dc=amis,dc=com,dc=mx
+description: consultas asociada
+cn: CONASC
+objectClass: groupOfUniqueNames
+
+dn: cn=QA,ou=groups,dc=amis,dc=com,dc=mx
+uniqueMember: uid=nobody,ou=people,ou=groups
+description: rol de prueba
+cn: QA
+objectClass: groupOfUniqueNames
+
+dn: cn=QAAAAA,ou=groups,dc=amis,dc=com,dc=mx
+uniqueMember: uid=nobody,ou=people,ou=groups
+description: rol de pruebas
+cn: QAAAAA
+objectClass: groupOfUniqueNames
+
+dn: cn=AAA,ou=groups,dc=amis,dc=com,dc=mx
+uniqueMember: uid=nobody,ou=people,ou=groups
+description: ssss
+cn: AAA
+objectClass: groupOfUniqueNames
+
+dn: cn=PRUEBA,ou=groups,dc=amis,dc=com,dc=mx
+uniqueMember: uid=nobody,ou=people,ou=groups
+description: Rol Prueba
+cn: PRUEBA
+objectClass: groupOfUniqueNames
+
+dn: cn=PM,ou=groups,dc=amis,dc=com,dc=mx
+uniqueMember: uid=nobody,ou=people,ou=groups
+description: rol prueba
+cn: PM
+objectClass: groupOfUniqueNames
+
+dn: cn=PRUEBADD,ou=groups,dc=amis,dc=com,dc=mx
+uniqueMember: uid=nobody,ou=people,ou=groups
+description: prusssdff
+cn: PRUEBADD
+objectClass: groupOfUniqueNames
+
+dn: cn=ROLE40,ou=groups,dc=amis,dc=com,dc=mx
+uniqueMember: uid=nobody,ou=people,ou=groups
+description: Mi nuevo rol 40
+cn: ROLE40
+objectClass: groupOfUniqueNames
+
+dn: cn=ROLE50,ou=groups,dc=amis,dc=com,dc=mx
+uniqueMember: uid=nobody,ou=people,ou=groups
+description: Mi nuevo role 50
+cn: ROLE50
+objectClass: groupOfUniqueNames
+
+dn: uid=pparamop,ou=people,dc=amis,dc=com,dc=mx
+employeeType: asegurador
+mail: victor@prutech.com.mx
+telephoneNumber: 5556581111
+ou: S0002
+postalAddress: tlacopac
+description: asegurador
+cn: pedro
+title: asegurador
+objectClass: inetOrgPerson
+uid: pparamop
+street: francisco I madero
+postalCode: 01040
+givenName: pedroza
+sn: paramo
+
+dn: uid=vgarciag,ou=people,dc=amis,dc=com,dc=mx
+employeeType: prueba
+mail: victor@prutech.com.mx
+telephoneNumber: 5556847878
+ou: S0003
+postalAddress: dkmd
+description: igual
+cn: victor
+title: desconocido
+objectClass: inetOrgPerson
+uid: vgarciag
+street: deuheh#34
+postalCode: 01040
+givenName:: Z2FyY8OtYQ==
+sn:: Z2FyY8OtYQ==
+
+dn: uid=ecastillom,ou=people,dc=amis,dc=com,dc=mx
+employeeType: Master
+mail: fernando@prutech.com.mx
+telephoneNumber: 8383838383
+ou: S0003
+postalAddress: Colonia Bonita
+description: Master
+cn: Erick
+title: Master
+objectClass: inetOrgPerson
+userPassword:: UCFGeVpYa8K/Qng=
+uid: ecastillom
+street: Calle Alta
+postalCode: 29292
+givenName: Martinez
+sn: Castillo
+
+dn: uid=punod,ou=people,dc=amis,dc=com,dc=mx
+employeeType: cualquiera
+mail: victor@prutech.com.mx
+telephoneNumber: 5556584848
+ou: S0001
+postalAddress: dhbbhdbh
+description: jdhdhudbhbhdhh
+cn: prueba uno
+title: deschhh
+objectClass: inetOrgPerson
+userPassword: hXYtVhcJOO
+uid: punod
+street: dcfgtyhujikol#45
+postalCode: 13200
+givenName: dos
+sn: uno
+
+dn: uid=aamisq,ou=people,dc=amis,dc=com,dc=mx
+employeeType: admin
+mail: victor@prutech.com.mx
+telephoneNumber: 5588454848
+ou: S0001
+postalAddress: dhheueueu
+description: qa
+cn: admon
+title: todo
+objectClass: inetOrgPerson
+userPassword: qxEQgcOEF%
+uid: aamisq
+street: dcfvgbhnjmk#456
+postalCode: 13200
+givenName: qa
+sn: amis
+
+dn: uid=atiq,ou=people,dc=amis,dc=com,dc=mx
+employeeType: admti
+mail: victor@prutech.com.mx
+telephoneNumber: 5584788787
+ou: S0001
+postalAddress: ctvgyhujikm
+description: admiti
+cn: adm
+userPassword: b?yKIj#PeT
+uid: atiq
+street: gvbhnjmk#45
+postalCode: 15444
+givenName: qa
+sn: ti
+title: qadd
+objectClass: inetOrgPerson
+businessCategory: false
+
+dn: uid=aadmasociaq,ou=people,dc=amis,dc=com,dc=mx
+employeeType: admasociaqa
+mail: victor@prutech.com.mx
+telephoneNumber: 5588496324
+ou: S0001
+postalAddress: hbdnjdjnj
+description: dbhuhbdbh
+cn: adma
+title: qa
+objectClass: inetOrgPerson
+userPassword: MurEnUmN!T
+uid: aadmasociaq
+street: dcfvgbhnjumkiol#45
+postalCode: 13887
+givenName: qa
+sn: admasocia
+
+dn: uid=uasociadaq,ou=people,dc=amis,dc=com,dc=mx
+employeeType: usuasociada
+mail: victor@prutech.com.mx
+telephoneNumber: 5584888787
+ou: S0001
+postalAddress: gvbhnjmk
+description: frtgyhuj
+cn: usuaso
+title: qa
+objectClass: inetOrgPerson
+uid: uasociadaq
+street: fvghjkm#89
+postalCode: 18978
+givenName: qa
+sn: asociada
+userPassword: usu12345
+
+dn: uid=casociaf,ou=people,dc=amis,dc=com,dc=mx
+employeeType: consultasocia
+mail: victor@prutech.com.mx
+telephoneNumber: 5587787878
+ou: S0001
+postalAddress: HHUYGYGYGY
+description: gyuhijok
+cn: consult
+title: qa
+objectClass: inetOrgPerson
+userPassword:: PyVMeFLCvyEtJWo=
+uid: casociaf
+street: fghjhngbfds#899
+postalCode: 18787
+givenName: fghyujik
+sn: asocia
+businessCategory: false
+
+dn: uid=afernandezv,ou=people,dc=amis,dc=com,dc=mx
+employeeType: Ajustador
+mail: erickcasme@gmail.com
+telephoneNumber: 8888888888
+ou: S0036
+postalAddress: Colonia Bonita
+description: Contador
+cn: Alberto
+title: Ajustador
+objectClass: inetOrgPerson
+userPassword: sIvvAp?GbF
+uid: afernandezv
+street: Calle lInda
+postalCode: 32723
+givenName: Vallejo
+sn: Fernandez
+businessCategory: false
+
+dn:: dWlkPWRiYXJyw7NuYyxvdT1wZW9wbGUsZGM9YW1pcyxkYz1jb20sZGM9bXg=
+employeeType: DIRECTOR GENERAL
+mail: proyectos_aye@amis.com.mx
+telephoneNumber: 54800637
+ou: S0034
+postalAddress: Tlacopac
+description: ACTUARIA
+cn: DENISSE
+title: GASTOS
+uid:: ZGJhcnLDs25j
+street: Francisco I. Madero 21
+postalCode: 01040
+sn:: QkFSUsOTTg==
+businessCategory: false
+objectClass: inetOrgPerson
+userPassword:: w4LCv0Ilw4LCv2lzLVhSUw==
+givenName: CASAS1
+
+dn: cn=SSS,ou=groups,dc=amis,dc=com,dc=mx
+uniqueMember: uid=nobody,ou=people,ou=groups
+description: ssssssssssss
+cn: SSS
+objectClass: groupOfUniqueNames
+
+dn: uid=ssssf,ou=people,dc=amis,dc=com,dc=mx
+mail: V@IHGHHHJ.COM
+telephoneNumber: 5515487787
+ou: S0034
+postalAddress: JHDJHUD
+cn: SSSS
+title: FTGYHUJIK
+uid: ssssf
+street:: RlJUR1lIVUpJS09Mw5E=
+postalCode: 13270
+givenName: FFF
+businessCategory: false
+objectClass: inetOrgPerson
+userPassword: VDreI?lIKa
+sn: SSSasdsd
+
+dn: uid=cvelazquezn,ou=people,dc=amis,dc=com,dc=mx
+mail: carlos.vn@prutech.com.mx
+telephoneNumber: 5555848878
+ou: S0048
+postalAddress: conocida
+cn: carlos
+title: develop
+uid: cvelazquezn
+street: desconocida
+postalCode: 13200
+givenName: navarrete
+objectClass: inetOrgPerson
+sn: velazquez
+businessCategory: false
+userPassword: asd123ASD$%
+
+dn: cn=block,ou=groups,dc=amis,dc=com,dc=mx
+objectClass: posixGroup
+objectClass: top
+cn: block
+gidNumber: 7469
+
+dn: uid=mmendezg,ou=people,dc=amis,dc=com,dc=mx
+uid: mmendezg
+mail: vicmanjfj@gmail.com
+telephoneNumber: 5123456789
+ou: AMIS
+street: conocida conocida conocid
+postalCode: 13240
+givenName:: R2FyY8OtYQ==
+postalAddress: desconocida desconocida d
+cn: Manuel
+sn:: TcOpbmRleg==
+objectClass: inetOrgPerson
+
+dn: uid=pqa0,ou=people,dc=amis,dc=com,dc=mx
+uid: pqa0
+mail: victor@prutech.com.mx
+telephoneNumber: 5556581111
+ou: S0023
+street: dcfvgbhnjmk,l#4
+postalCode: 13200
+givenName: 08
+postalAddress: desco
+cn: prueba
+sn: qa
+title: test
+objectClass: inetOrgPerson
+
+dn: uid=pvica,ou=people,dc=amis,dc=com,dc=mx
+mail: victor@prutech.com.mx
+telephoneNumber: 5556581111
+ou: S0048
+postalAddress: jbuhhuuhuuh
+cn: prueba
+title: desco
+objectClass: inetOrgPerson
+uid: pvica
+street: sedrftgyhujiko#45
+postalCode: 13200
+givenName: altapass
+sn: vic
+userPassword: Victor1234%
+
+dn: uid=mlunas,ou=people,dc=amis,dc=com,dc=mx
+mail: victor@prutech.com.mx
+telephoneNumber: 55555555
+ou: AMIS
+postalAddress: tlacopac
+cn: MARCELO
+uid: mlunas
+street: francisco i. madero 21
+postalCode: 01040
+givenName: S
+sn: LUNA
+title: DIRECTOR GENERAL gm
+objectClass: inetOrgPerson
+businessCategory: true
+userPassword: ^2466Hola$Hola3
+
+dn: uid=jliejac,ou=people,dc=amis,dc=com,dc=mx
+mail: erick@prutech.com.mx
+telephoneNumber: 5554844848
+ou: S0034
+postalAddress: decjchh
+cn: jacobo
+title: develop
+objectClass: inetOrgPerson
+uid: jliejac
+street: desconocida
+postalCode: 13200
+givenName: castillo
+sn: lieja
+userPassword: Be?igrEiqp
+
+dn: uid=gcruza,ou=people,dc=amis,dc=com,dc=mx
+mail: georgina@prutech.com.mx
+telephoneNumber: 5548961523
+ou: S0034
+postalAddress: campestre estrellla
+cn: Georgina
+title: QA
+objectClass: inetOrgPerson
+uid: gcruza
+street: bilbao 392
+postalCode: 09880
+givenName: Aguila
+sn: Cruz
+userPassword: pDo!VwNRWD
+
+dn: uid=pwah,ou=people,dc=amis,dc=com,dc=mx
+mail: victor@prutech.com.mx
+telephoneNumber: 5548848484
+ou: AMIS
+postalAddress: huhgegegy
+cn: prueba
+title: fgvbhnjkm
+objectClass: inetOrgPerson
+uid: pwah
+street: hugdfgsudysihdfhud
+postalCode: 01040
+givenName: huj
+sn: wa
+userPassword:: TUNKaXhswr9VYUc=
+

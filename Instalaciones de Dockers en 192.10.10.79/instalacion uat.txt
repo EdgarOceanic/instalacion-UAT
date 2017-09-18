@@ -1,0 +1,153 @@
+
+192.10.10.79 (direccion IP donde se instalaran los dockers)
+Usuario: appwuser 
+Password: N8Wc0XG7
+Carpeta instalación: /datos01
+
+    en caso de no poder accesar a la 192.10.10.79, ingresar con putty a la 191 
+        y ejecutar: ssh 192.10.10.79
+
+
+1.-
+****************  INSTALACION DE JAVA  **************
+    http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+    VER TUTORIAL: https://www.java.com/es/download/help/linux_x64_install.xml
+
+
+
+***********
+        VER LOS DOCKERS EJECUTANDOSE
+            sudo docker ps
+
+        PARAR UN SERVICIO DE DOCKER
+            sudo docker stop "nombre de la imagen"
+
+
+
+1.-
+****************  INSTALACION DEL DOCKER **************
+    ingresar a la carpeta "datos01"
+    crear carpeta llamada "contenedores" a ingresar a ella
+
+    ejecutar:
+        sudo apt-get update
+        sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+        sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
+        sudo apt-get update
+        apt-cache policy docker-engine
+        sudo apt-get install -y docker-engine
+                    *(en caso de no tener la misma version de ubuntu, ejecutar la sentencia lsb_release -a)
+        sudo systemctl status docker 
+                    *(verificar que se instalo bien el docker)
+        sudo docker version
+                    *(ver que version de docker se instalo)
+                                Client:
+                                Version:      17.05.0-ce
+                                API version:  1.29
+                                Go version:   go1.7.5
+                                Git commit:   89658be
+                                Built:        Thu May  4 22:10:54 2017
+                                OS/Arch:      linux/amd64
+
+                                Server:
+                                Version:      17.05.0-ce
+                                API version:  1.29 (minimum version 1.12)
+                                Go version:   go1.7.5
+                                Git commit:   89658be
+                                Built:        Thu May  4 22:10:54 2017
+                                OS/Arch:      linux/amd64
+                                Experimental: false
+
+
+2.- 
+****************  INSTALACION DEL REDIS **************
+    -referencia: https://store.docker.com/community/images/sickp/alpine-redis
+    -nota: la version de es la 3.2.9 
+    -el puerto donde corre redis es el: 6379
+
+    ejecutar:
+        sudo docker run --rm sickp/alpine-redis:3.2.9 about
+        sudo nohup docker run --rm sickp/alpine-redis:3.2.9 # redis-server 
+        sudo docker images 
+                    "copiar id de la imagen de redis"
+        sudo docker run -d (id de la imagen de redis)
+        
+
+    ***queda pendiente levantar el redis sin que se termine la ejecucion
+
+
+        
+3.- 
+****************  INSTALACION DE MONGO **************
+    crear carpeta "data" dentro de la carpeta "contenedores" y entrar a la carpeta creada
+
+    ejecutar:
+        sudo docker run -d -p 9097:27017 -v ~/data:/datos01/contenedores/data/db mongo
+
+    crear las colecciones desde robomongo
+        *menus (llenar coleccion con json "menus - collections mongo.json" )
+        *rolemenus (llenar coleccion con json "rolemenus - collections mongo.json" )
+        *uploaded_file 
+
+4.- 
+****************  INSTALACION DE LDAP **************
+    dentro de la carpeta de "contenedores"
+        
+        ejecutar:
+                sudo docker run -p 7098:389 --env LDAP_ORGANISATION="amis" --env LDAP_DOMAIN="amis.com.mx" --env LDAP_ADMIN_PASSWORD="amis123"  --detach osixia/openldap:1.1.7
+
+        el puerto es
+            7098
+
+        la base es:                 
+            "dc=amis,dc=com,dc=mx"
+        
+        crear la conexion
+
+
+5.- 
+****************  MIGRACION DE LA BASE DE DATOS SYBASE **************
+    LAS TABLAS QUE TIENEN DATOS SON LAS SIGUIENTES
+        
+
+
+6.-
+****************  componentes **************
+
+    *DISTRIBUCION*
+
+        
+        server vista (seguridad) 192.10.10.74
+                menus
+                rolesmenus
+                users
+                sap-web
+                roles
+                catalog-service
+
+
+        server Negocio (transacciones) 192.10.10.75
+                sap-services
+                sap-batch
+                sapaye-operations
+            
+        
+
+    
+
+    HP-UX Negocio y vista
+    
+        EJECUTAR ESTO ANTES QUE NADA
+                stty 1d22:1805:967:3b:0:3:1c:8:15:4:0:ff:ff:1d22:1805:967:3b:3:1c:8:15:4:0:ff:ff:ff:ff:ff:1:0:ff:11:13:0:0:ff:ff:0:38:c9:0
+
+        Ip: 192.10.10.74
+                Usuario: appwuser 
+                Password: :3vt7\QZNR
+                Carpeta instalación: /datos
+
+        Ip: 192.10.10.75
+                Usuario: appwuser 
+                Password: :3vt7\QZNR
+                Carpeta instalación: /datos
+
+nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnGp/Q5lh0P8nPL21oMMrt2RrkT9AW5jgYwLfSUnJVc9G6uR3cXRRDCjHqWU5WYwivcF180A6CWp/ireQFFBNowgc5XaA0kPpzEtgsA5YsNX7iSnUibB004iBTfU9hZ2Rbsc8cWqynT0RyN4TP1RYVSeVKvMQk4GT1r7JCEC+TNu1ELmbNwMQyzKjsfBXyIOCFU/E94ktvsTZUHF4Oq44DBylCDsS1k7/sfZC2G5EU7Oz0mhG8+Uz6MSEQHtoIi6mc8u64Rwi3Z3tscuWG2ShtsUFuNSAFNkY7LkLn+/hxLCu2bNISMaESa8dG22CIMuIeRLVcAmEWEWH5EEforTg+QIDAQAB
