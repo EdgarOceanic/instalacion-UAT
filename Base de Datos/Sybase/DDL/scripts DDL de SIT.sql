@@ -116,11 +116,6 @@ CREATE TABLE ESPECIALIDAD (
 ) go;
 
 
-CREATE TABLE FACT_PROC_DUPL (
-	id_Detalle_GMM int NOT NULL,
-	Procesado bit NOT NULL
-) go;
-
 CREATE TABLE HISTORICO_DESCARGAS (
 	Id INTEGER  identity not null,
 	NombreArchivo varchar(100) NOT NULL,
@@ -246,14 +241,6 @@ CREATE TABLE TIPO_ERROR (
 	Descripcion varchar(1000) NOT NULL,
 	CONSTRAINT TIPO_ERROR_PK PRIMARY KEY (Cve)
 ) go;
-
-CREATE TABLE UMBRAL (
-	Parametro varchar(100) NOT NULL,
-	Valor varchar(150) NOT NULL
-) go
-CREATE UNIQUE INDEX UMBRAL_PK ON UMBRAL (Parametro) go;
-
-
 
 /**
 ********
