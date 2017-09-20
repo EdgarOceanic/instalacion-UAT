@@ -1,6 +1,9 @@
-﻿INSERT INTO CAT_REGLA (Cve,Tipo,Aplicacion,Descripcion,Riesgo) VALUES ('10M','M',1,'Condicionado a las caracterizticas del producto',1);
-INSERT INTO CAT_REGLA (Cve,Tipo,Aplicacion,Descripcion,Riesgo) VALUES ('11M','M',2,'Titular de la Cuenta bancaria en donde se realiza el Reembolso relacionada al Afectado',2);
-INSERT INTO CAT_REGLA (Cve,Tipo,Aplicacion,Descripcion,Riesgo) VALUES ('1CE','CE',1,'Agentes',3);
+﻿INSERT INTO CAT_REGLA (Cve,Tipo,Aplicacion,Descripcion,Riesgo) 
+VALUES ('10M','M',1,'Condicionado a las caracterizticas del producto',1);
+INSERT INTO CAT_REGLA (Cve,Tipo,Aplicacion,Descripcion,Riesgo) 
+VALUES ('11M','M',2,'Titular de la Cuenta bancaria en donde se realiza el Reembolso relacionada al Afectado',2);
+INSERT INTO CAT_REGLA (Cve,Tipo,Aplicacion,Descripcion,Riesgo) 
+VALUES ('1CE','CE',1,'Agentes',3);
 INSERT INTO CAT_REGLA (Cve,Tipo,Aplicacion,Descripcion,Riesgo) VALUES ('1D','D',2,'Facturas Duplicadas',2);
 INSERT INTO CAT_REGLA (Cve,Tipo,Aplicacion,Descripcion,Riesgo) VALUES ('1E','E',3,'Asegurados_ Emisión',3);
 INSERT INTO CAT_REGLA (Cve,Tipo,Aplicacion,Descripcion,Riesgo) VALUES ('1M','M',2,'Padecimientos no acordes a la edad del afectado',3);
@@ -20,3 +23,5 @@ INSERT INTO CAT_REGLA (Cve,Tipo,Aplicacion,Descripcion,Riesgo) VALUES ('6M','M',
 INSERT INTO CAT_REGLA (Cve,Tipo,Aplicacion,Descripcion,Riesgo) VALUES ('7M','M',1,'Monto medio del procedimiento (+2sd)',1);
 INSERT INTO CAT_REGLA (Cve,Tipo,Aplicacion,Descripcion,Riesgo) VALUES ('8M','M',1,'Proclives a fraude si ocurre en el 1er año',1);
 INSERT INTO CAT_REGLA (Cve,Tipo,Aplicacion,Descripcion,Riesgo) VALUES ('9M','M',1,'CIE 10  que se relacionan a CX estéticas',1);
+COMMIT;
+
