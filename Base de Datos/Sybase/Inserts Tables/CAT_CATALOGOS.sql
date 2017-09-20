@@ -212,3 +212,5 @@ INSERT INTO CAT_CATALOGOS (CatalogoId,DescripcionCatalogo,CatalogoPadreId,Catalo
 INSERT INTO CAT_CATALOGOS (CatalogoId,DescripcionCatalogo,CatalogoPadreId,CatalogoValor,CatalogoActivo) VALUES ('TA99','Ninguno','TAS','99','1');
 INSERT INTO CAT_CATALOGOS (CatalogoId,DescripcionCatalogo,CatalogoPadreId,CatalogoValor,CatalogoActivo) VALUES ('AMIS','Administrador AMIS','CMP','AMIS','1');
 INSERT INTO CAT_CATALOGOS (CatalogoId,DescripcionCatalogo,CatalogoPadreId,CatalogoValor,CatalogoActivo) VALUES ('CP12','GENERAL DE SALUD','CMP','H0707','1');
+
+COMMIT;

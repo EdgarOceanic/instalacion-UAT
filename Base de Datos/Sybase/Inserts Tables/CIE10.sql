@@ -21908,3 +21908,4 @@ INSERT INTO CIE10 (ClaveCie10cve,Descripcion,Genero,PropensoFraude,EdadMinima,Re
 'Z998','DEPENDENCIA DE OTRAS MAQUINAS Y DISPOSITIVOS CAPACITANTES','','',0,' ',100,'0',NULL,'',0,0);
 INSERT INTO CIE10 (ClaveCie10cve,Descripcion,Genero,PropensoFraude,EdadMinima,RelacionCirugiaEstetica,EdadMaxima,Principal,TipoPadecimiento,CondicionadoCaracteristicas,TiempodeResolucionMinimo,TiempodeResolucionMaximo) VALUES (
 'Z999','DEPENDENCIA DE MAQUINA Y DISPOSITIVO CAPACITANTE, NO ESPECIFICADA','','',0,' ',100,'0',NULL,'',0,0);
+commit;

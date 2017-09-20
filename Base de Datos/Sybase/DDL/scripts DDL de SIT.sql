@@ -1,13 +1,13 @@
---SCRIPTS CREACION DE TABLAS DESDE SIT
+
 
 -- TABLAS PADRES
 
 CREATE TABLE CAT_CATALOGOS (
 	CatalogoId varchar(4) NOT NULL,
 	DescripcionCatalogo varchar(30) NOT NULL,
-	CatalogoPadreId varchar(6),
+	CatalogoPadreId varchar(6) NULL,
 	CatalogoValor varchar(100) NOT NULL,
-	CatalogoActivo char(1),
+	CatalogoActivo char(1) NULL,
 	CONSTRAINT CAT_CATALOGOS_PK PRIMARY KEY (CatalogoId)
 ) go;
 
@@ -19,8 +19,7 @@ CREATE TABLE CAT_REGLA (
 	Descripcion varchar(250) NOT NULL,
 	Riesgo int NOT NULL,
 	CONSTRAINT CAT_REGLA_PK PRIMARY KEY (Cve)
-) go
-CREATE UNIQUE INDEX NewTable_PK ON CAT_REGLA (Cve) go;
+) go;
 
 
 CREATE TABLE CAT_REGLAS (
@@ -50,11 +49,11 @@ CREATE TABLE CIE10 (
 	EdadMinima int NOT NULL,
 	RelacionCirugiaEstetica char(1) NOT NULL,
 	EdadMaxima int NOT NULL,
-	Principal varchar(1),
-	TipoPadecimiento int,
-	CondicionadoCaracteristicas varchar(1),
-	TiempodeResolucionMinimo int,
-	TiempodeResolucionMaximo int,
+	Principal varchar(1) NULL,
+	TipoPadecimiento int NULL,
+	CondicionadoCaracteristicas varchar(1) NULL,
+	TiempodeResolucionMinimo int NULL,
+	TiempodeResolucionMaximo int NULL,
 	CONSTRAINT CIE10_PK PRIMARY KEY (ClaveCie10cve)
 ) go;
 
@@ -77,19 +76,19 @@ CREATE TABLE COBERTURA (
 
 CREATE TABLE CONFIG (
 	Parametro varchar(100) NOT NULL,
-	Valor varchar(150) NOT NULL
+	Valor varchar(150) NOT NULL,
+	CONSTRAINT CONFIG_PK PRIMARY KEY (Parametro)
 ) go;
-CREATE UNIQUE INDEX CONFIG_PK ON CONFIG (Parametro) go;
 
 
 CREATE TABLE CPT4 (
 	ClaveCPT4 varchar(10) NOT NULL,
 	Descripcion varchar(150) NOT NULL,
-	CVTR varchar(1),
-	Especialidad varchar(10),
-	LimiteSuperior decimal(18,0),
-	LimiteInferior decimal(18,0),
-	DesviacionEstandar decimal(18,0),
+	CVTR varchar(1) NULL,
+	Especialidad varchar(10) NULL,
+	LimiteSuperior decimal(18,0) NULL,
+	LimiteInferior decimal(18,0) NULL,
+	DesviacionEstandar decimal(18,0) NULL,
 	CONSTRAINT CPT4_PK PRIMARY KEY (ClaveCPT4)
 ) go;
 
@@ -97,16 +96,15 @@ CREATE TABLE CPT4 (
 CREATE TABLE DEYDE_NORMALIZACION (
 	NormalizacionId INTEGER  identity not null,
 	ValorOriginal varchar(250) NOT NULL,
-	ValorNormalizado varchar(250),
+	ValorNormalizado varchar(250) NULL,
 	Tratamiento varchar(3) NOT NULL,
 	Campo varchar(50) NOT NULL,
 	Archivo varchar(50) NOT NULL,
 	FechaInsercion date NOT NULL,
-	FechaNormalizacion date,
-	Posiciones varchar(255),
+	FechaNormalizacion date NULL,
+	Posiciones varchar(255) NULL,
 	CONSTRAINT DEYDE_NORMALIZACION_PK PRIMARY KEY (NormalizacionId)
 ) go;
-CREATE UNIQUE INDEX CAT_REGLAS_PK ON DEYDE_NORMALIZACION (NormalizacionId) go;
 
 
 CREATE TABLE ESPECIALIDAD (
@@ -128,26 +126,26 @@ CREATE TABLE HISTORICO_DESCARGAS (
 
 CREATE TABLE LISTAS_ESPECIALES (
 	Id INTEGER  identity not null,
-	Tipo varchar(16),
-	RazonSocial varchar(140),
-	NombreProveedor varchar(70),
-	Domicilio varchar(140),
-	RfcProveedor varchar(40),
-	CedulaProfesional varchar(140),
-	TipoRiesgo char(1),
-	Telefono varchar(25),
-	PaginaInternet varchar(100),
-	FechaReporte date,
-	RevisionInsumosElevados char(1),
-	FacturasRecetas char(1),
-	SiniestroFicticio char(1),
-	Observaciones varchar(220),
-	VerificadoFogBugz char(1),
-	CasoFogBugz numeric(10,2),
-	ArchivoVerificacion varchar(220),
-	CoincidenciaListaCofepris char(1),
-	Repetidos varchar(120),
-	LicenciaCofepris char(1),
+	Tipo varchar(16) NULL,
+	RazonSocial varchar(140) NULL,
+	NombreProveedor varchar(70) NULL,
+	Domicilio varchar(140) NULL,
+	RfcProveedor varchar(40) NULL,
+	CedulaProfesional varchar(140) NULL,
+	TipoRiesgo char(1) NULL,
+	Telefono varchar(25) NULL,
+	PaginaInternet varchar(100) NULL,
+	FechaReporte date NULL,
+	RevisionInsumosElevados char(1) NULL,
+	FacturasRecetas char(1) NULL,
+	SiniestroFicticio char(1) NULL,
+	Observaciones varchar(220) NULL,
+	VerificadoFogBugz char(1) NULL,
+	CasoFogBugz numeric(10,2) NULL,
+	ArchivoVerificacion varchar(220) NULL,
+	CoincidenciaListaCofepris char(1) NULL,
+	Repetidos varchar(120) NULL,
+	LicenciaCofepris char(1) NULL,
 	CONSTRAINT LISTAS_ESPECIALES_PK PRIMARY KEY (Id)
 ) go;
 
@@ -180,16 +178,16 @@ CREATE TABLE RESUMEN_ARCHIVOS_PROCESADOS (
 	NombreArchivo varchar(100) NOT NULL,
 	CompaniaId varchar(5) NOT NULL,
 	Registros int NOT NULL,
-	RegistrosValidos int,
+	RegistrosValidos int NULL,
 	RegistrosDuplicados int NOT NULL,
-	ArchivoProcesadoValido char(1),
-	AlertasGeneradas int,
+	ArchivoProcesadoValido char(1) NULL,
+	AlertasGeneradas int NULL,
 	FechaCarga date NOT NULL,
-	Usuario varchar(35),
-	FechaCancelacion date,
-	Id numeric(10,0) NOT NULL IDENTITY(1,1),
-	FechaInicio date,
-	FechaFin date,
+	Usuario varchar(35) NULL,
+	FechaCancelacion date NULL,
+	Id INTEGER  identity not null,
+	FechaInicio date NULL,
+	FechaFin date NULL,
 	CONSTRAINT RESUMEN_ARCHIVOS_PROCESADOS_PK PRIMARY KEY (Id)
 ) go;
 
@@ -201,15 +199,15 @@ CREATE TABLE RIESGO_SINIESTRO (
 
 CREATE TABLE SOLICITUD_AUTORIZACION (
 	Id INTEGER  identity not null,
-	Motivo varchar(140),
+	Motivo varchar(140) NULL,
 	NombreSolicita varchar(70) NOT NULL,
 	NombreAutoriza varchar(70) NOT NULL,
 	OpcionAutoriza varchar(70) NOT NULL,
 	MailsSolicita varchar(140) NOT NULL,
 	MailsAutoriza varchar(140) NOT NULL,
 	FechaSolicita date NOT NULL,
-	FechaAutoriza date,
-	EstatusActivo char(1),
+	FechaAutoriza date NULL,
+	EstatusActivo char(1) NULL,
 	EstatusAutorizado char(1)
 ) go;
 
@@ -219,8 +217,8 @@ CREATE TABLE SOLICITUD_AUTORIZADORES_CATALOGO (
 	ApellidoPaterno varchar(70) NOT NULL,
 	ApellidoMaterno varchar(70) NOT NULL,
 	CompaniaId varchar(70) NOT NULL,
-	Mail varchar(140),
-	EstatusActivo char(1)
+	Mail varchar(140) NULL,
+	EstatusActivo char(1) NULL
 ) go;
 
 CREATE TABLE SOLICITUD_CANCELACION_ARCHIVO (
@@ -268,42 +266,42 @@ CREATE TABLE CAT_SISTEMAS_CATALOGOS (
 
 
 CREATE TABLE DETALLE_ARCHIVO_GMM (
-	CompaniaId varchar(5),
-	NumeroPoliza varchar(20),
-	Siniestro varchar(20),
-	Reclamacion varchar(20),
-	TipoSeguro int,
-	TipoProducto int,
-	CertificadoAfectado varchar(20),
-	FechaAntiguedadAfectado date,
-	NombreAfectado varchar(80),
-	ApellidoPaternoAfectado varchar(80),
-	ApellidoMaternoAfectado varchar(80),
+	CompaniaId varchar(5) NULL,
+	NumeroPoliza varchar(20) NULL,
+	Siniestro varchar(20) NULL,
+	Reclamacion varchar(20) NULL,
+	TipoSeguro int NULL,
+	TipoProducto int NULL,
+	CertificadoAfectado varchar(20) NULL,
+	FechaAntiguedadAfectado date NULL,
+	NombreAfectado varchar(80) NULL,
+	ApellidoPaternoAfectado varchar(80) NULL,
+	ApellidoMaternoAfectado varchar(80) NULL,
 	FechaNacimientoAfectado date,
-	GeneroAfectado char(1),
-	RfcAfectado varchar(13),
-	Cie10 varchar(4),
-	CPT4 int,
-	FechaIngresoHospital date,
-	FechaegresoHospital date,
-	DiasEstancia int,
-	NombreProveedor varchar(80),
-	ApellidoPaternoProveedor varchar(80),
-	ApellidoMaternoProveedor varchar(80),
-	RfcProveedor varchar(13),
-	EntidadProveedor int,
-	TipoProveedor int,
-	TipoPago int,
-	FechaPrimerGastoSiniestro date,
-	FechaComprobante date,
-	FolioFiscal varchar(36),
-	MontoComprobante numeric(14,2),
-	CLABE varchar(18),
-	Banco int,
-	NombreTitularClabe varchar(80),
-	ApellidoPaternoTitularClabe varchar(80),
-	ApellidoMaternoTitularClabe varchar(80),
-	RegistroActivo char(1),
+	GeneroAfectado char(1) NULL,
+	RfcAfectado varchar(13) NULL,
+	Cie10 varchar(4) NULL,
+	CPT4 int NULL,
+	FechaIngresoHospital date NULL,
+	FechaegresoHospital date NULL,
+	DiasEstancia int NULL,
+	NombreProveedor varchar(80) NULL,
+	ApellidoPaternoProveedor varchar(80) NULL,
+	ApellidoMaternoProveedor varchar(80) NULL,
+	RfcProveedor varchar(13) NULL,
+	EntidadProveedor int NULL,
+	TipoProveedor int NULL,
+	TipoPago int NULL,
+	FechaPrimerGastoSiniestro date NULL,
+	FechaComprobante date NULL,
+	FolioFiscal varchar(36) NULL,
+	MontoComprobante numeric(14,2) NULL,
+	CLABE varchar(18) NULL,
+	Banco int NULL,
+	NombreTitularClabe varchar(80) NULL,
+	ApellidoPaternoTitularClabe varchar(80) NULL,
+	ApellidoMaternoTitularClabe varchar(80) NULL,
+	RegistroActivo char(1) NULL,
 	Linea int NOT NULL,
 	Id INTEGER  identity not null,
 	FK_ID_ARCHIVO int NOT NULL,
@@ -322,8 +320,8 @@ CREATE TABLE ERROR_SINIESTRO (
 	Id INTEGER  identity not null,
 	Campo varchar(100) NOT NULL,
 	CONSTRAINT ERROR_SINIESTRO_PK PRIMARY KEY (Id),
-	CONSTRAINT FK_ERROR_SINIESTRO_RESUMEN_ARCHIVOS_PROCESADOS FOREIGN KEY (IdArchivo) REFERENCES sapaye_sit.dbo.RESUMEN_ARCHIVOS_PROCESADOS(Id) ON DELETE RESTRICT ON UPDATE RESTRICT,
-	CONSTRAINT FK_ERROR_SINIESTRO_TIPO_ERROR FOREIGN KEY (IdTipo) REFERENCES sapaye_sit.dbo.TIPO_ERROR(Cve) ON DELETE RESTRICT ON UPDATE RESTRICT
+	CONSTRAINT FK_ERROR_SINIESTRO_RESUMEN_ARCHIVOS_PROCESADOS FOREIGN KEY (IdArchivo) REFERENCES RESUMEN_ARCHIVOS_PROCESADOS(Id) ,
+	CONSTRAINT FK_ERROR_SINIESTRO_TIPO_ERROR FOREIGN KEY (IdTipo) REFERENCES TIPO_ERROR(Cve) 
 ) go;
 
 
@@ -340,74 +338,5 @@ CREATE TABLE HISTORICO_ALERTAS (
 	CONSTRAINT HISTORICO_ALERTAS_PK PRIMARY KEY (FK_ReglaId,FK_NombreArchivo,FK_CampoId,FK_NumeroIntento),
 	CONSTRAINT FK_HISTORICO_ALERTAS_CAT_REGLAS FOREIGN KEY (FK_ReglaId) REFERENCES CAT_REGLAS(ReglaId) 
 ) go;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
